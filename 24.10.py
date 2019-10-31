@@ -1,4 +1,8 @@
+# Задание №1
+# Создать класс Person с атрибутами имя, фамилия, дата рождения. Добавить методы get_age, displayInfo.
 from datetime import date
+
+
 class Person:
     def __init__(self, name, lastname, birth_date):
         self.name = name
@@ -13,9 +17,26 @@ class Person:
         age = d_today.year - b_dat
         return age
 
-
     def displayInfo(self):
         return (f'Пивет, если ты вдруг не знал, тебя зовут {self.name} {self.lname} и тебе к сожалению {self.age}')
 
-a = Person('Aleks', 'Shavlak', '1990-08-25')
+
+a = Person('Aleksandr', 'Shavlak', '1990-08-25')
 print(a.displayInfo())
+
+# Задание №2
+# Создать класс Ученик наследуя от Person. Создать экземпляры этого класса и добавить в ClassRoom.
+# Переопределить метод displayInfo.
+
+
+class Student(Person):
+    frst_st = Student('Ivan')
+
+
+
+
+
+# Задание №3
+# Создать класс Учитель наследуя от Person. Переопределить метод displayInfo.
+# Создать экземпляры этого класса и добавить в Школу еще одну переменную класса - словарь,
+# где ключ это название предмета а значение - список учителей, работающих в данной школе.
