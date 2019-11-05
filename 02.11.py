@@ -93,16 +93,49 @@ print(obj_temp.far)
 # Создать класс USDCurrencyConverter, с приватным атрибутом current_value (в USD) и вычисляемыми
 # атрибутами для перевода из USD в другие валюты, например EUR, UAH.
 
-class USDcorrencyConverter:
-    currencies = {
-        'uah':
-    }
 
-    def __init__(self, value, UAH, EUR):
-        self.UAH = UAH
-        self.EUR = EUR
+class USDcorrencyConverter:
+
+    def __init__(self, value, currency):
+        self._value = value
+        self.currency = currency
+
+    @property
+    def convert(self):
+        if self.currency == 'USD':
+            return self._value * 24.95
+        else:
+            return self._value * 27.85
+
+    @convert.setter
+    def convert(self, obj_curr):
+        self.currency = obj_curr[1]
+        self._value = obj_curr[0]
+
+    @convert.deleter
+    def convert(self):
+        del self._value
+        del self.currency
+
+
+obj_curr = USDcorrencyConverter(200, 'USD')
+obj_curr.convert = 350, 'EUR'
+print(obj_curr.convert)
+
+
+# Задание №5
+# Создать класс Карта с атрибутами значение и масть, перегрузить методы __lt__, __gt__, __eq__ для сравнения карт
+
+class Card:
+    def __init__(self, suit, value):
+        self.suit = suit
         self.value = value
 
-    def convert(self, ):
-        return self.
+    def __lt__(self, other):
+        return self.value < other.value
 
+    def __gt__(self, other):
+        return self.suit > other.suit
+
+    def __eq__(self, other):
+        return self is other
