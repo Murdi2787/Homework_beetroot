@@ -128,7 +128,7 @@ curr_inp = input('Введите валюту: ')
 val_inp = int(input('Введите сумму: '))
 
 
-class USDcurrencyConverter:
+class UAHcurrencyConverter:
 
     def __init__(self, value, currency):
         self._value = value
@@ -156,7 +156,7 @@ dict_curr = {
     'DKK': 3.68, 'CAD': 18.83, 'NOK': 2.71, 'CZK': 1.08,
     'SEK': 2.57, 'JPY': 0.23,
 }
-obj_curr = USDcurrencyConverter(val_inp, curr_inp)
+obj_curr = UAHcurrencyConverter(val_inp, curr_inp)
 print(obj_curr.convert)
 
 
