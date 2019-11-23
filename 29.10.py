@@ -153,6 +153,7 @@ ln = int(input('Выберите длинну пароля: '))
 chars = '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
 create_counter(chars)
 
+
 # Задание №7
 # Изменить пример make_averager, так чтоб функция хранила результат предыдущей суммы и количество елементов,
 # тогда зная эти два числа можно вычислить новое среднее значение. (используйте nonlocal)
