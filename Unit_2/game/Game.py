@@ -25,18 +25,7 @@ class Game:
             r_choice = random.choice(attacker.moves.keys())
             r_choice(passive_life)
 
-    def player_health(self):
-        if self.AI.health <= 35:
-            self.AI.moves['heal1'] = self.AI.heal()
 
-        elif self.AI.health => 60:
-            del self.AI.moves[4]
-
-        elif self.player.health => 50:
-            random.choice(Player.small_hit, Player.big_hit)
-
-        elif self.AI.health => 50:
-            random.choice(Player.small_hit,Player.big_hit)
 
       def show_stats(self):
           pass
@@ -44,6 +33,7 @@ class Game:
 class Player:
 
     def __init__(self, name):
+        self.is_comp = True
         self.name = name
         self.health = 100
         self.moves = {
@@ -64,5 +54,15 @@ class Player:
         healing = random.sample(range(17, 25), 1)
         self.health = self.health + healing
 
+    def player_health(self):
+        if self.health <= 35:
+            self.moves['heal1'] = self.AI.heal()
 
+        elif self.health >= 60:
+            del self.moves[4]
 
+        elif self.health >= 50:
+            random.choice(Player.small_hit, Player.big_hit)
+
+        elif self.health >= 50:
+            random.choice(Player.small_hit,Player.big_hit)
