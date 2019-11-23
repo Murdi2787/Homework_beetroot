@@ -26,7 +26,6 @@ class Game:
             r_choice(passive_life)
 
 
-
       def show_stats(self):
           pass
 
@@ -56,13 +55,13 @@ class Player:
 
     def player_health(self):
         if self.health <= 35:
-            self.moves['heal1'] = self.AI.heal()
+            self.moves['heal1'] = self.heal
 
         elif self.health >= 60:
             del self.moves[4]
 
         elif self.health >= 50:
-            random.choice(Player.small_hit, Player.big_hit)
+            random.choice(self.small_hit, self.big_hit)
 
         elif self.health >= 50:
-            random.choice(Player.small_hit,Player.big_hit)
+            random.choice(self.small_hit,self.big_hit)
